@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="./app.js"></script>
+  <title>Hello, Block Notary!</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg">
+      <h1>Notary</h1>
+
+        <h2>Upload a new File</h2>
+        <form action="" enctype="multipart/form-data">
+          <p>
+            <label for="file">File:</label>
+            <input id="file" name="file_input" type="file" />
+          </p>
+          <p>
+            <label for="comment">Comment:</label>
+            <input id="comment" type="text" name="comment" />
+          </p>
+          <button type="button" class="btn btn-default" onclick="javascript:App.processSend();return false;">Submit</button>
+        </form>
+        <div id="status"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

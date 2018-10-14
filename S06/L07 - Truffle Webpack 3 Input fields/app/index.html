@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MetaCoin - Truffle Webpack Demo w/ Frontend</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+</head>
+<body>
+  <h1>Notary</h1>
+
+          <h2>Upload a new File</h2>
+          <form action="" enctype="multipart/form-data">
+            <p>
+              <label for="fileHash">FileHash:</label>
+              <input id="fileHash" name="fileHash" type="text" />
+            </p>
+              <p>
+                <label for="fileName">FileName:</label>
+                <input id="fileName" name="fileName" type="text" />
+              </p>
+            <p>
+              <label for="comment">Comment:</label>
+              <input id="comment" type="text" name="comment" />
+            </p>
+            <button type="button" class="btn btn-default" onclick="javascript:App.processSend();return false;">Submit</button>
+          </form>
+          <div id="status"></div>
+</body>
+</html>

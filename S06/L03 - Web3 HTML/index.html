@@ -1,0 +1,147 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <script src="node_modules/web3/dist/web3.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+  <div>Here is some content.</div>
+
+
+  <script>
+    var web3;
+    if (typeof web3 !== 'undefined') {
+      web3 = new Web3(web3.currentProvider);
+    } else {
+      // set the provider you want from Web3.providers
+      web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+    }
+
+    var NotaryContract = web3.eth.contract([
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_checksum",
+				"type": "bytes32"
+			},
+			{
+				"name": "_fileName",
+				"type": "string"
+			},
+			{
+				"name": "_comments",
+				"type": "string"
+			}
+		],
+		"name": "addEntry",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "_checksum",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "_filename",
+				"type": "string"
+			},
+			{
+				"indexed": true,
+				"name": "_setBy",
+				"type": "address"
+			}
+		],
+		"name": "NewEntry",
+		"type": "event"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_checksum",
+				"type": "bytes32"
+			}
+		],
+		"name": "entrySet",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "myMapping",
+		"outputs": [
+			{
+				"name": "fileName",
+				"type": "string"
+			},
+			{
+				"name": "timestamp",
+				"type": "uint256"
+			},
+			{
+				"name": "checkSum",
+				"type": "bytes32"
+			},
+			{
+				"name": "comments",
+				"type": "string"
+			},
+			{
+				"name": "isSet",
+				"type": "bool"
+			},
+			{
+				"name": "setBy",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]);
+
+  var notaryInstance = NotaryContract.at("0x8be2d206f08e4d0e9ab07e213dcf4d9e46f38aa6");
+
+  web3.eth.defaultAccount = web3.eth.accounts[0];
+
+  </script>
+</body>
+
+</html>
