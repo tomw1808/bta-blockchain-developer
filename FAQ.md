@@ -8,7 +8,6 @@ We have updated the code so it works with Solidity 0.5.0 as well. You might want
 https://solidity.readthedocs.io/en/v0.5.0/050-breaking-changes.html
 and make sure your code is compliant.
 
-
 ## MetaMask Private Mode
 Soon comes Private Mode from MetaMask 
 https://medium.com/metamask/introducing-privacy-mode-42549d4870fa
@@ -20,4 +19,3 @@ It's not directly related to this course, but if you start a private network wit
 
    geth --datadir=./blockdata --rpc --mine --miner.threads=1 --miner.etherbase=0x54bA8e223De78
 970061e9E9aa96E3BF3C6048fb8 --rpc
-
