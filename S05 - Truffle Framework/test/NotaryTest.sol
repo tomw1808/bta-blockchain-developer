@@ -1,4 +1,4 @@
-pragma solidity ^0.4.23;
+pragma solidity >=0.4.24 <0.6.0;
 
 import "truffle/Assert.sol";
 
@@ -22,7 +22,11 @@ contract NotaryTest {
 
   function testExceptions() public {
     address notaryAddress = address(DeployedAddresses.Notary());
-    bool transactionSentSuccessful = notaryAddress.call(bytes4(keccak256("entrySet(bytes32)")), 0x193C167E2B336B32356F17009C923C4CD33AC8E3F62BAD1384E8A049F77FD296);
+    //OLD, since Version 0.5.0 look at the below lines! bool transactionSentSuccessful = notaryAddress.call(bytes4(keccak256("entrySet(bytes32)")), 0x193C167E2B336B32356F17009C923C4CD33AC8E3F62BAD1384E8A049F77FD296);
+    
+    bool transactionSentSuccessful;
+    bytes memory returnValue;
+    (transactionSentSuccessful,returnValue) = notaryAddress.call(abi.encodeWithSignature("entrySet(bytes32)", 0x193C167E2B336B32356F17009C923C4CD33AC8E3F62BAD1384E8A049F77FD296));
     Assert.equal(transactionSentSuccessful, false, "The Transaction should fail");
   }
 }

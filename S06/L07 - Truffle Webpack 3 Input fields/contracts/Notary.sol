@@ -18,7 +18,7 @@ contract Notary {
     /**
      * Example: 0x193C167E2B336B32356F17009C923C4CD33AC8E3F62BAD1384E8A049F77FD295, "test", "test"
      * */
-    function addEntry(bytes32 _checksum, string _fileName, string _comments) public {
+    function addEntry(bytes32 _checksum, string memory _fileName, string memory _comments) public {
         require(!myMapping[_checksum].isSet);
 
         myMapping[_checksum].isSet = true;
@@ -31,7 +31,7 @@ contract Notary {
     }
 
 
-    function entrySet(bytes32 _checksum) public view returns(string, uint, string, address) {
+    function entrySet(bytes32 _checksum) public view returns(string memory, uint, string memory, address) {
         require(myMapping[_checksum].isSet);
         return (myMapping[_checksum].fileName, myMapping[_checksum].timestamp, myMapping[_checksum].comments, myMapping[_checksum].setBy);
     }
