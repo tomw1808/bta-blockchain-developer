@@ -58,7 +58,7 @@ window.App = {
           App.appendStatus(" [OK]<br />");
 
           //normalizing the hash
-          if(hash[0] != "0" && hash[1] != "x") {
+          if(hash.substring(0,2) !== '0x') {
             hash = "0x"+hash;
           }
 
