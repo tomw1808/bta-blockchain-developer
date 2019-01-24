@@ -21,3 +21,6 @@ Any many more things!
 
 Check it out here: https://blockchaintrainingalliance.com/products/ethereum-developer-training-on-demand
 
+
+### Problems / Updates?
+If you run into any problems, checkout the [FAQ](FAQ.md)
